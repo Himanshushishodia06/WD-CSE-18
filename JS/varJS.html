@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JS VAriable Data values types
+
+        // Primitive data types : immutable single value ans stored in stack memory
+        var myName = "Aryan";            //string
+        console.log("My name is " + myName);
+        console.log(typeof (myName));
+
+        //number
+        var myAge = 15;
+        console.log("My age is " + myAge);
+        console.log(typeof (myAge));
+
+        //boolean
+        var isMarried = false;
+        console.log(myName +  "Is married? " + isMarried);
+        console.log(typeof (isMarried));
+
+        //undefined
+        var myAddress;
+        console.log(myName + " My address is " + myAddress);
+        console.log(typeof (myAddress));
+
+        //null
+        var myEmail = null;
+        console.log(myName + " My email is " + myEmail);
+        console.log(typeof (myEmail));
+
+        //bigint
+        var myValue = BigInt(12345678901234567890);
+        console.log(myValue);
+        console.log(typeof (myValue));
+
+        //symbol
+        var value1 = Symbol("Hello");
+        var value2 = Symbol("Hello");
+        console.log(value1 === value2); // Output: false
+        console.log(typeof (value1) + " and " + typeof (value2));
+
+        // reference or Non-primitive data value types : mutable and can store multiple values and stored in heap memory
+        //object {} values are defined in key value pair
+        let myInfo = {
+            name: "Aryan",
+            age: 15,
+            mob : 1234567890,
+            isMarried: false,
+            address : null,
+            branch : "Computer Science and Engineering",
+            section : 18
+        };
+
+        console.log(myInfo);
+        //to find the lenght of object
+        console.log(Object.keys(myInfo).length);
+        console.log(myInfo.branch);
+
+        //array [] values are ordered collection of data
+        let studentDetails = ["Aryan", 15, false, "singh@gmail.com", "GZB"];
+        console.log(studentDetails[2]);
+        console.log(studentDetails.length);
+
+        for(let i = 0; i < studentDetails.length; i++){
+            console.log(studentDetails[i]);
+        }
+
+        //function : block of code that performs a specific task and can be reused
+        function greet(name){                                                   //function Example 1
+            console.log("Hello " + name + " Welcome to ABES");
+        }
+        greet("Aryan");
+
+        function myCalculator(){                                                 //function Example 2
+            let num1 = 10;
+            let num2 = 20;
+            let result = num1 + num2;
+            console.log("The sum is: " + result);
+        }
+        myCalculator();
+
+    </script>
+    
+</body>
+</html>
