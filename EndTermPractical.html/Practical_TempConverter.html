@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        /* Is style tag ke wajah se ab alag file ki zaroorat nahi hai */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .converter-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 350px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #333333;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="converter-card">
+        <h2>Temperature Converter<br>(Celsius to Fahrenheit)</h2>
+        <input type="number" id="celsiusInput" placeholder="Enter Celsius (°C)">
+        <button onclick="convertTemp()">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertTemp() {
+            const celsius = parseFloat(document.getElementById('celsiusInput').value);
+            const resultElement = document.getElementById('result');
+            
+            if (isNaN(celsius)) {
+                resultElement.style.color = "#dc3545";
+                resultElement.innerText = "Please enter a valid number.";
+                return;
+            }
+
+            const fahrenheit = (celsius * 9/5) + 32;
+            resultElement.style.color = "#28a745";
+            resultElement.innerText = `${celsius}°C = ${fahrenheit.toFixed(2)}°F`;
+        }
+    </script>
+
+</body>
+</html>
